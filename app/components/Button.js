@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 const Button = ({ onClick, disabled, primary, secondary, label, type }) => {
