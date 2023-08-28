@@ -56,6 +56,8 @@ const AuthPage = () => {
             src="/images/logo.png"
             alt="logo"
             className="h-12"
+            height="20"
+            width="200"
             onClick={() => router.push("/")}
           />
         </nav>

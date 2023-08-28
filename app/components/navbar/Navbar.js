@@ -40,7 +40,13 @@ const Navbar = ({ currentuser, movie }) => {
         ${showBackground ? "bg-zinc-900 bg-opacity-90" : ""}
       `}
       >
-        <Image className="h-4 lg:h-7" src="/images/logo.png" alt="Logo" />
+        <Image
+          className="h-4 lg:h-7"
+          src="/images/logo.png"
+          alt="Logo"
+          height="20"
+          width="120"
+        />
         <div className=" flex-row ml-8 gap-7 hidden lg:flex">
           <NavbarItem label="Home" />
           <NavbarItem label="Series" />
