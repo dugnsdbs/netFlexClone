@@ -1,9 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useCallback } from "react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import PlayButton from "./PlayButton";
+import useInfoModal from "../hooks/useInfoModal";
 
 const Billboard = ({ movie, allMovies }) => {
+  const { onOpen } = useInfoModal();
+
+  const handleOpenModal = useCallback(() => {
+    onOpen();
+  }, [onOpen]);
+
   //   h- something means it will use 56 something ratio with video
   return (
     <div className="relative h-[56.25vw]">
@@ -13,7 +21,7 @@ const Billboard = ({ movie, allMovies }) => {
         muted
         loop
         poster={movie?.thumbnailUrl}
-        src={movie.videoUrl}
+        src={movie?.videoUrl}
       ></video>
       <div className="absolute top-[30%] md:top-[40%] ml-4 md:ml-16">
         <p className="text-white text-1xl md:text-5xl h-full w-[50%] lg:text-6xl font-bold drop-shadow-xl">
@@ -23,7 +31,11 @@ const Billboard = ({ movie, allMovies }) => {
           {movie?.description}
         </p>
         <div className="flex flex-row items-center mt-3 md:mt-4 gap-3">
-          <button className="bg-white text-white bg-opacity-30 rounded-md py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg:text-lg font-semibold flex flex-row items-center hover:bg-opacity-20 transition">
+          <PlayButton movieId={movie?.id} />
+          <button
+            onClick={handleOpenModal}
+            className="bg-white text-white bg-opacity-30 rounded-md py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg:text-lg font-semibold flex flex-row items-center hover:bg-opacity-20 transition"
+          >
             <AiOutlineInfoCircle className="mr-1" />
             More Info
           </button>

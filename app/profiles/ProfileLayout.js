@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const ProfileLayout = ({ currentUser }) => {
+const ProfileLayout = ({ currentuser }) => {
   const router = useRouter();
   return (
     <div className="flex items-center h-full justify-center">
@@ -22,7 +22,7 @@ const ProfileLayout = ({ currentUser }) => {
                 <img src="/images/default-blue.png" alt="Profile" />
               </div>
               <div className="mt-4 text-gray-400 text-2xl text-center group-hover:text-white">
-                {currentUser.name}
+                {currentuser.name}
               </div>
             </div>
           </div>

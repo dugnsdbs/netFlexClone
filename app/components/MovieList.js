@@ -4,7 +4,7 @@ import React from "react";
 import { isEmpty } from "lodash";
 import MovieCard from "./MovieCard";
 
-const MovieList = ({ data, title }) => {
+const MovieList = ({ data, title, currentuser }) => {
   if (isEmpty(data)) {
     return null;
   }
@@ -16,7 +16,7 @@ const MovieList = ({ data, title }) => {
         </p>
         <div className="grid grid-cols-4 gap-2">
           {data.map((movie) => (
-            <MovieCard key={movie.id} data={movie} />
+            <MovieCard key={movie.id} data={movie} currentuser={currentuser} />
           ))}
         </div>
       </div>

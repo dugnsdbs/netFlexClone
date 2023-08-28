@@ -9,7 +9,7 @@ import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { BsChevronDown } from "react-icons/bs";
 
-const UserMenu = ({ currentUser }) => {
+const UserMenu = ({ currentuser }) => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 

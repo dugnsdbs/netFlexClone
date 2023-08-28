@@ -6,13 +6,20 @@ import getCurrentUser from "@/app/actions/getCurrentUser";
 export async function POST(req, params) {
   try {
     const currentUser = await getCurrentUser();
+
     if (!currentUser) {
       return NextResponse.error();
     }
-    const { movieId } = params;
+    console.log(params);
+    const movidId = params.params.listingId;
+
+    if (!movidId || typeof movidId !== "string") {
+      throw new Error("Invalid ID");
+    }
 
     let favoriteIds = [...(currentUser.favoriteIds || [])];
-    favoriteIds.push(movieId);
+
+    favoriteIds.push(movidId);
 
     const user = await prisma.user.update({
       where: {
@@ -32,19 +39,20 @@ export async function POST(req, params) {
 export async function DELETE(req, params) {
   try {
     const currentUser = await getCurrentUser();
+
     if (!currentUser) {
       return NextResponse.error();
     }
 
-    const { movieId } = params;
+    const movidId = params.params.listingId;
 
-    if (!movieId || typeof movieId !== "string") {
+    if (!movidId || typeof movidId !== "string") {
       throw new Error("Invalid ID");
     }
 
     let favoriteIds = [...(currentUser.favoriteIds || [])];
 
-    favoriteIds = favoriteIds.filter((id) => id !== movieId);
+    favoriteIds = favoriteIds.filter((id) => id !== movidId);
 
     const user = await prisma.user.update({
       where: {

@@ -5,11 +5,9 @@ import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { BsSearch, BsBell, BsChevronDown } from "react-icons/bs";
 
-const AccountMenu = ({ currentUser }) => {
+const AccountMenu = ({ currentuser }) => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-
-  console.log(currentUser.name);
 
   const toggleOpen = useCallback(() => {
     setIsOpen((prev) => !prev);
@@ -44,7 +42,7 @@ const AccountMenu = ({ currentUser }) => {
                 alt="blue"
               />
               <p className="text-white text-sm group-hover/item:underline">
-                {currentUser.name}
+                {currentuser?.name}
               </p>
             </div>
             <hr className="bg-gray-600 border-0 h-px my-4" />

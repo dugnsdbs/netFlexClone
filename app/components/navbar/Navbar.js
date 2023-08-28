@@ -10,7 +10,7 @@ import AccountMenu from "./AccountMenu";
 
 const TOP_OFFSET = 66;
 
-const Navbar = ({ currentUser, movie }) => {
+const Navbar = ({ currentuser, movie }) => {
   const router = useRouter();
   const [showBackground, setShowBackground] = useState(false);
 
@@ -50,7 +50,7 @@ const Navbar = ({ currentUser, movie }) => {
         </div>
         {/* lg:hidden 큰 스크린일때 숨긴다 */}
         <div className="lg:hidden  flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
-          <UserMenu currentUser={currentUser} />
+          <UserMenu currentuser={currentuser} />
         </div>
         {/* ml-auto makes this div goes all away to right */}
         <div className="flex flex-row ml-auto gap-7 items-center">
@@ -61,9 +61,9 @@ const Navbar = ({ currentUser, movie }) => {
             <BsBell />
           </div>
           {/* relative will change location of div if chrome width gets smaller */}
-          {currentUser ? (
+          {currentuser ? (
             <div className="flex flex-row items-center gap-2 cursor-pointer relative">
-              <AccountMenu currentUser={currentUser} />
+              <AccountMenu currentuser={currentuser} />
             </div>
           ) : (
             <div className="flex flex-row gap-4">
