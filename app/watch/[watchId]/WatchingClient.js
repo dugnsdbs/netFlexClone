@@ -9,7 +9,6 @@ const WatchingClient = ({ singleMovie }) => {
   const router = useRouter();
   //   const params = useParams();
   //   console.log(params);
-  console.log(singleMovie);
 
   return (
     <div className="h-screen w-screen bg-black">

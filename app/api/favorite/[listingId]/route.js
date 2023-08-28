@@ -10,7 +10,7 @@ export async function POST(req, params) {
     if (!currentUser) {
       return NextResponse.error();
     }
-    console.log(params);
+
     const movidId = params.params.listingId;
 
     if (!movidId || typeof movidId !== "string") {

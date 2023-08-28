@@ -7,6 +7,7 @@ import Container from "../components/Container";
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import Image from "next/image";
 
 const AuthPage = () => {
   const router = useRouter();
@@ -51,7 +52,7 @@ const AuthPage = () => {
       {/*"bg-black w-full h-full lg:bg-opacity-50"  this means large = lg screen opacity-50   and when it gets small becomes bg-black  */}
       <div className="bg-black w-full h-full lg:bg-opacity-50">
         <nav className="px-12 py-5">
-          <img
+          <Image
             src="/images/logo.png"
             alt="logo"
             className="h-12"

@@ -4,6 +4,7 @@ import React, { useState, useCallback } from "react";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { BsSearch, BsBell, BsChevronDown } from "react-icons/bs";
+import Image from "next/image";
 
 const AccountMenu = ({ currentuser }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ const AccountMenu = ({ currentuser }) => {
     <div onClick={toggleOpen}>
       <div className="flex flex-row items-center justify-between">
         <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden mr-2">
-          <img src="images/default-blue.png" alt="blue" />
+          <Image src="images/default-blue.png" alt="blue" />
         </div>
         <BsChevronDown
           className={`text-white transition ${
@@ -36,7 +37,7 @@ const AccountMenu = ({ currentuser }) => {
         <div className="gb-black w-56 absolute top-14 right-0 py-5 flex-col border-2 border-gray-800 flex">
           <div className="flex flex-col gap-3">
             <div className="px-3 group/item flex flex-row gap-3 items-ceter w-full">
-              <img
+              <Image
                 className="w-8 rounded-md"
                 src="/images/default-blue.png"
                 alt="blue"

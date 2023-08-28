@@ -28,7 +28,7 @@ const FavoriteButton = ({ movieId, currentuser }) => {
       const updatedFavoriteIds = response?.data?.favoriteIds;
       return updatedFavoriteIds;
     },
-    [movieId, isFavorite]
+    [movieId, isFavorite, router]
   );
 
   const Icon = isFavorite ? AiOutlineCheck : AiOutlinePlus;
