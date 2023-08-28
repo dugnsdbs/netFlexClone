@@ -7,6 +7,7 @@ import UserMenu from "./UserMenu";
 import NavbarItem from "./NavbarItem";
 import { BsSearch, BsBell, BsChevronDown } from "react-icons/bs";
 import AccountMenu from "./AccountMenu";
+import Image from "next/image";
 
 const TOP_OFFSET = 66;
 
