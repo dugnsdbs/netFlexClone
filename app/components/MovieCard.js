@@ -19,7 +19,7 @@ const MovieCard = ({ data, currentuser }) => {
 
   return (
     <div className="group bg-zinc-900 col-span relative h-[12vw]">
-      <Image
+      <img
         src={data.thumbnailUrl}
         height="20"
         width="200"
@@ -27,7 +27,7 @@ const MovieCard = ({ data, currentuser }) => {
         className="cursor-pointer object-cover transition duration shadow-xl rounded-md group-hover:opacity-90 sm:group-hover:opacity-0 delay-300 w-full h-[12vw]"
       />
       <div className="opacity-0 absolute top-0 transition duration-200 z-10 invisiable sm:invisiable delay-300 w-full scale-0 group-hover:scale-110 group-hover:-translate-y-[6vw] group-hover:translate-x-[2vw] group-hover:opacity-100">
-        <Image
+        <img
           height="20"
           width="200"
           src={data?.thumbnailUrl}

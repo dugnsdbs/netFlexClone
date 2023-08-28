@@ -57,6 +57,8 @@ const RegisterPage = () => {
           <Image
             src="/images/logo.png"
             alt="logo"
+            width="180"
+            height="20"
             className="h-12"
             onClick={() => router.push("/")}
           />

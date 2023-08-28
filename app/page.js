@@ -49,7 +49,11 @@ export default async function Home() {
     <Container>
       <Navbar currentuser={currentuser} />
       <Billboard movie={movie} allMovies={allMovies} />
-      <InfoModal movie={allMovies} currentuser={currentuser} />
+      <InfoModal
+        movie={movie}
+        allMovies={allMovies}
+        currentuser={currentuser}
+      />
 
       <div className="pb-40">
         <MovieList

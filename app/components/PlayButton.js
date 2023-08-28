@@ -3,6 +3,7 @@ import { BsFillPlayFill } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 
 const PlayButton = ({ movieId }) => {
+  console.log(movieId);
   const router = useRouter();
   return (
     <button
