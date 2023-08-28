@@ -44,7 +44,7 @@ export default async function Home() {
   const movie = await getMovie();
   const allMovies = await getAllMovies();
   const favoriteMovie = await getFavoriteMovie();
-  console.log(allMovies);
+
   return (
     <Container>
       <Navbar currentuser={currentuser} />
